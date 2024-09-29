@@ -50,7 +50,7 @@ ui <- bslib::page_sidebar(
     selectInput(
       "selectBaseMap",
       label = "Base Map",
-      choices = c("Vector" = "OpenStreetMap", "Satellite" = "Esri.WorldImagery", "Artistic" = "Stamen.Watercolor"),
+      choices = c("Vector" = "OpenStreetMap", "Satellite" = "Esri.WorldImagery"),
       selected = "OpenStreetMap"
     ),
     sliderInput(
@@ -99,8 +99,7 @@ server <- function(input, output, session) {
     makeIcon(
       switch(input$selectBaseMap,
              "OpenStreetMap" = "data/International_Space_Station.svg",
-             "Esri.WorldImagery" = "data/International_Space_Station_white.svg",
-             "Stamen.Watercolor" = "data/International_Space_Station_white.svg"),
+             "Esri.WorldImagery" = "data/International_Space_Station_white.svg"),
       iconWidth = 80*(30/18.9),
       iconHeight = 80,
       iconAnchorX = (80/2)*(30/18.9),
