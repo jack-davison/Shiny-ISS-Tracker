@@ -39,6 +39,7 @@ quick_value_box <- function(var, icon, theme = "secondary") {
 
 # UI
 ui <- bslib::page_sidebar(
+  shiny::useBusyIndicators(),
   title = "Where is the ISS?",
   theme = bs_theme(bootswatch = "solar"),
   sidebar = sidebar(
