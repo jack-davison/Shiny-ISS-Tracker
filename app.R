@@ -31,7 +31,7 @@ map <- leaflet() |>
 quick_value_box <- function(var, icon, theme = "secondary") {
   value_box(
     title = var,
-    theme_color = theme,
+    theme = value_box_theme(name = theme),
     showcase = bsicons::bs_icon(icon),
     value = textOutput(var)
   )
